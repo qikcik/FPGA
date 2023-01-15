@@ -1,0 +1,85 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity VgaController is
+	generic (
+		 h_pulse  : integer := 208;    --horiztonal sync pulse width in pixels
+		 h_bp     : integer := 336;    --horiztonal back porch width in pixels
+		 h_pixels : integer := 1920;   --horiztonal display width in pixels
+		 h_fp     : integer := 128;    --horiztonal front porch width in pixels
+		 h_pol    : std_logic := '0';  --horizontal sync pulse polarity (1 = positive, 0 = negative)
+		 
+		 v_pulse  : integer := 3;      --vertical sync pulse width in rows
+		 v_bp     : integer := 38;     --vertical back porch width in rows
+		 v_pixels : integer := 1200;   --vertical display width in rows
+		 v_fp     : integer := 1;      --vertical front porch width in rows
+		 v_pol    : std_logic := '1'   --vertical sync pulse polarity (1 = positive, 0 = negative)	
+	);
+	port (
+		in_pixelClk			: in  std_logic;
+		out_vgaHSync			: out std_logic;
+		out_vgaVSync			: out std_logic;
+		
+		currentPixelX	: out integer;
+		currentPixelY	: out integer;
+		activeDisplay	: out std_logic
+	);
+end VgaController;
+
+architecture behaviour of VgaController is
+  constant h_period : integer := h_pulse + h_bp + h_pixels + h_fp; --total number of pixel clocks in a row
+  constant v_period : integer := v_pulse + v_bp + v_pixels + v_fp; --total number of rows in column
+begin
+	process(in_pixelClk)
+		variable h_count : integer range 0 to  h_period -1 := 0; 
+		variable v_count : integer range 0 to  v_period -1 := 0; 
+		
+	begin 
+		if rising_edge(in_pixelClk) then
+		
+			-- COUNTERS
+			if(h_count < h_period - 1) then    --horizontal counter (pixels)
+				h_count := h_count + 1;
+			else
+				h_count := 0;
+				if(v_count < v_period - 1) then  --veritcal counter (rows)
+					v_count := v_count + 1;
+				else
+					v_count := 0;
+				end if;
+			end if;
+			
+			-- HSync
+			if (h_count < h_pixels + h_fp or h_count >= h_pixels + h_fp + h_pulse) then
+				out_vgaHSync <= not h_pol;
+			else
+				out_vgaHSync <= h_pol;
+			end if;
+			
+			--VSync
+			if(v_count < v_pixels + v_fp or v_count >= v_pixels + v_fp + v_pulse) then
+				out_vgaVSync <= not v_pol;
+			else
+				out_vgaVSync <= v_pol;
+			end if;
+			
+			--PixelPosition
+			if(h_count < h_pixels) then
+				currentPixelY <= h_count;
+			end if;
+			if(v_count < v_pixels) then 
+				currentPixelX <= v_count;
+			end if;
+			
+		if(h_count < h_pixels and v_count < v_pixels) then 
+        activeDisplay <= '1';                              
+      else
+        activeDisplay <= '0';
+      end if;
+
+			
+		end if;
+	end process;
+
+end behaviour;

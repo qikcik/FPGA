@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "out_vgaHSync",
+					"strict" : false
+				},
+				{
+					"name" : "out_vgaVSync",
+					"strict" : false
+				},
+				{
+					"name" : "out_vgaRGB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "out_vgaRGB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "out_vgaRGB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_clk_50mhz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
