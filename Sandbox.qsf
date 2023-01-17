@@ -105,6 +105,7 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name VHDL_FILE src/Pong/Entry_Pong.vhd
 set_global_assignment -name VHDL_FILE src/Vga/Entry_VGA.vhd
 set_global_assignment -name VHDL_FILE src/VendingMachine/Entry_VendingMachine.vhd
 set_global_assignment -name VHDL_FILE src/Entry.vhd

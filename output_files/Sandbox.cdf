@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("/home/qik/vhdl/Sandbox/output_files/") File("Sandbox.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("/home/qik/Projects/FPGA/output_files/") File("Sandbox.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

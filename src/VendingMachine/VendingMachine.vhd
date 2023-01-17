@@ -14,7 +14,7 @@ entity VendingMachine is
 	port (
 		in_clk					: in std_logic;
 		
-		in_keys 				: in std_logic_vector(3 downto 0);
+		in_keys 					: in std_logic_vector(3 downto 0);
 
 		out_state 				: out TVendingMachine_State	:= TVendingMachine_State_Initial;		
 		out_display 	 		: out Array4x7Seg := (CONST7SEG_EMPTY,CONST7SEG_EMPTY,CONST7SEG_EMPTY,CONST7SEG_EMPTY)

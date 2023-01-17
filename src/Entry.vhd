@@ -23,7 +23,7 @@ end Entry;
 
 architecture behaviour of Entry is
 
-component Entry_VGA
+component Entry_Pong
 	port (
 		in_clk_50mhz			: in std_logic;
 		
@@ -48,7 +48,7 @@ end component;
 	
 begin 
 
-	mainEntity: Entry_VGA 
+	mainEntity: Entry_Pong 
 	port map
 	(
 		in_clk_50mhz			=> in_clk_50mhz,

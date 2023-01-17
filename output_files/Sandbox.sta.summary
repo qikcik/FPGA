@@ -2,76 +2,148 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'Entry_VGA:mainEntity|clk_divider[0]'
-Slack : -10.978
-TNS   : -235.151
+Type  : Slow 1200mV 85C Model Setup 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : -7.818
+TNS   : -92.901
+
+Type  : Slow 1200mV 85C Model Setup 'Entry_Pong:mainEntity|clk_divider[17]'
+Slack : -7.191
+TNS   : -938.866
 
 Type  : Slow 1200mV 85C Model Setup 'in_clk_50mhz'
-Slack : -0.911
-TNS   : -0.911
+Slack : -2.950
+TNS   : -40.335
 
-Type  : Slow 1200mV 85C Model Hold 'Entry_VGA:mainEntity|clk_divider[0]'
+Type  : Slow 1200mV 85C Model Setup 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : -1.989
+TNS   : -13.643
+
+Type  : Slow 1200mV 85C Model Hold 'Entry_Pong:mainEntity|clk_divider[17]'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Entry_Pong:mainEntity|clk_divider[15]'
 Slack : 0.453
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : 0.569
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Hold 'in_clk_50mhz'
-Slack : 0.703
+Slack : 0.735
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'in_clk_50mhz'
 Slack : -3.000
-TNS   : -4.487
+TNS   : -29.766
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Entry_VGA:mainEntity|clk_divider[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[17]'
 Slack : -1.487
-TNS   : -56.506
+TNS   : -220.076
 
-Type  : Slow 1200mV 0C Model Setup 'Entry_VGA:mainEntity|clk_divider[0]'
-Slack : -10.388
-TNS   : -218.678
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : -1.487
+TNS   : -32.714
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : -1.487
+TNS   : -19.331
+
+Type  : Slow 1200mV 0C Model Setup 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : -7.335
+TNS   : -86.971
+
+Type  : Slow 1200mV 0C Model Setup 'Entry_Pong:mainEntity|clk_divider[17]'
+Slack : -6.556
+TNS   : -861.879
 
 Type  : Slow 1200mV 0C Model Setup 'in_clk_50mhz'
-Slack : -0.807
-TNS   : -0.807
+Slack : -2.582
+TNS   : -36.183
 
-Type  : Slow 1200mV 0C Model Hold 'Entry_VGA:mainEntity|clk_divider[0]'
-Slack : 0.402
+Type  : Slow 1200mV 0C Model Setup 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : -1.799
+TNS   : -11.906
+
+Type  : Slow 1200mV 0C Model Hold 'Entry_Pong:mainEntity|clk_divider[17]'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : 0.529
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'in_clk_50mhz'
-Slack : 0.642
+Slack : 0.683
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'in_clk_50mhz'
 Slack : -3.000
-TNS   : -4.487
+TNS   : -29.766
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Entry_VGA:mainEntity|clk_divider[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[17]'
 Slack : -1.487
-TNS   : -56.506
+TNS   : -220.076
 
-Type  : Fast 1200mV 0C Model Setup 'Entry_VGA:mainEntity|clk_divider[0]'
-Slack : -4.450
-TNS   : -81.038
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : -1.487
+TNS   : -32.714
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : -1.487
+TNS   : -19.331
+
+Type  : Fast 1200mV 0C Model Setup 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : -2.909
+TNS   : -27.890
+
+Type  : Fast 1200mV 0C Model Setup 'Entry_Pong:mainEntity|clk_divider[17]'
+Slack : -2.496
+TNS   : -326.076
 
 Type  : Fast 1200mV 0C Model Setup 'in_clk_50mhz'
-Slack : -0.047
-TNS   : -0.047
+Slack : -1.253
+TNS   : -16.497
 
-Type  : Fast 1200mV 0C Model Hold 'Entry_VGA:mainEntity|clk_divider[0]'
-Slack : 0.186
+Type  : Fast 1200mV 0C Model Setup 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : -0.333
+TNS   : -1.588
+
+Type  : Fast 1200mV 0C Model Hold 'Entry_Pong:mainEntity|clk_divider[17]'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : 0.235
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'in_clk_50mhz'
-Slack : 0.234
+Slack : 0.291
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'in_clk_50mhz'
 Slack : -3.000
-TNS   : -4.047
+TNS   : -22.152
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Entry_VGA:mainEntity|clk_divider[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[17]'
 Slack : -1.000
-TNS   : -38.000
+TNS   : -148.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[0]'
+Slack : -1.000
+TNS   : -22.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Entry_Pong:mainEntity|clk_divider[15]'
+Slack : -1.000
+TNS   : -13.000
 
 ------------------------------------------------------------

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Sandbox
-Fri Dec 30 17:22:59 2022
+Sun Jan 15 16:17:30 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -14,15 +14,14 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
+  9. General Register Statistics
+ 10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Entry_VGA:mainEntity|VgaController:e_vgaController
- 13. Parameter Settings for Inferred Entity Instance: Entry_VGA:mainEntity|lpm_mult:Mult0
- 14. lpm_mult Parameter Settings by Entity Instance
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: Entry_Pong:mainEntity|VgaController:c_vgaController
+ 13. Port Connectivity Checks: "Entry_Pong:mainEntity|Disp4x7Seg:c_disp4x7seg"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -49,15 +48,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 30 17:22:59 2022          ;
+; Analysis & Synthesis Status        ; Successful - Sun Jan 15 16:17:30 2023          ;
 ; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                      ; Sandbox                                        ;
 ; Top-level Entity Name              ; Entry                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 5,499                                          ;
-;     Total combinational functions  ; 5,499                                          ;
-;     Dedicated logic registers      ; 39                                             ;
-; Total registers                    ; 39                                             ;
+; Total logic elements               ; 876                                            ;
+;     Total combinational functions  ; 876                                            ;
+;     Dedicated logic registers      ; 201                                            ;
+; Total registers                    ; 201                                            ;
 ; Total pins                         ; 27                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -158,129 +157,87 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 32          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
-; src/Vga/Entry_VGA.vhd            ; yes             ; User VHDL File               ; /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd                                             ;         ;
-; src/Entry.vhd                    ; yes             ; User VHDL File               ; /home/qik/vhdl/Sandbox/src/Entry.vhd                                                     ;         ;
-; src/Vga/VgaController.vhd        ; yes             ; User VHDL File               ; /home/qik/vhdl/Sandbox/src/Vga/VgaController.vhd                                         ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc          ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/multcore.tdf            ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/csa_add.inc             ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/muleabz.inc             ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_j9h.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/qik/vhdl/Sandbox/db/add_sub_j9h.tdf                                                ;         ;
-; db/add_sub_hkh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/qik/vhdl/Sandbox/db/add_sub_hkh.tdf                                                ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                 ; /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
+; src/Pong/Entry_Pong.vhd           ; yes             ; User VHDL File  ; /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd           ;         ;
+; src/Entry.vhd                     ; yes             ; User VHDL File  ; /home/qik/Projects/FPGA/src/Entry.vhd                     ;         ;
+; src/Disp7Seg/Disp4x7Seg.vhd       ; yes             ; User VHDL File  ; /home/qik/Projects/FPGA/src/Disp7Seg/Disp4x7Seg.vhd       ;         ;
+; src/Disp7Seg/Disp4x7Seg_Types.vhd ; yes             ; User VHDL File  ; /home/qik/Projects/FPGA/src/Disp7Seg/Disp4x7Seg_Types.vhd ;         ;
+; src/Vga/VgaController.vhd         ; yes             ; User VHDL File  ; /home/qik/Projects/FPGA/src/Vga/VgaController.vhd         ;         ;
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                    ;
-+---------------------------------------------+----------------------------------+
-; Resource                                    ; Usage                            ;
-+---------------------------------------------+----------------------------------+
-; Estimated Total logic elements              ; 5,499                            ;
-;                                             ;                                  ;
-; Total combinational functions               ; 5499                             ;
-; Logic element usage by number of LUT inputs ;                                  ;
-;     -- 4 input functions                    ; 4972                             ;
-;     -- 3 input functions                    ; 397                              ;
-;     -- <=2 input functions                  ; 130                              ;
-;                                             ;                                  ;
-; Logic elements by mode                      ;                                  ;
-;     -- normal mode                          ; 5386                             ;
-;     -- arithmetic mode                      ; 113                              ;
-;                                             ;                                  ;
-; Total registers                             ; 39                               ;
-;     -- Dedicated logic registers            ; 39                               ;
-;     -- I/O registers                        ; 0                                ;
-;                                             ;                                  ;
-; I/O pins                                    ; 27                               ;
-;                                             ;                                  ;
-; Embedded Multiplier 9-bit elements          ; 0                                ;
-;                                             ;                                  ;
-; Maximum fan-out node                        ; Entry_VGA:mainEntity|position[3] ;
-; Maximum fan-out                             ; 1975                             ;
-; Total fan-out                               ; 21493                            ;
-; Average fan-out                             ; 3.84                             ;
-+---------------------------------------------+----------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                         ;
++---------------------------------------------+---------------------------------------+
+; Resource                                    ; Usage                                 ;
++---------------------------------------------+---------------------------------------+
+; Estimated Total logic elements              ; 876                                   ;
+;                                             ;                                       ;
+; Total combinational functions               ; 876                                   ;
+; Logic element usage by number of LUT inputs ;                                       ;
+;     -- 4 input functions                    ; 374                                   ;
+;     -- 3 input functions                    ; 167                                   ;
+;     -- <=2 input functions                  ; 335                                   ;
+;                                             ;                                       ;
+; Logic elements by mode                      ;                                       ;
+;     -- normal mode                          ; 496                                   ;
+;     -- arithmetic mode                      ; 380                                   ;
+;                                             ;                                       ;
+; Total registers                             ; 201                                   ;
+;     -- Dedicated logic registers            ; 201                                   ;
+;     -- I/O registers                        ; 0                                     ;
+;                                             ;                                       ;
+; I/O pins                                    ; 27                                    ;
+;                                             ;                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                     ;
+;                                             ;                                       ;
+; Maximum fan-out node                        ; Entry_Pong:mainEntity|clk_divider[17] ;
+; Maximum fan-out                             ; 149                                   ;
+; Total fan-out                               ; 3266                                  ;
+; Average fan-out                             ; 2.89                                  ;
++---------------------------------------------+---------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                              ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                ; Entity Name   ; Library Name ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
-; |Entry                                            ; 5499 (0)            ; 39 (0)                    ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |Entry                                                                                                                                             ; Entry         ; work         ;
-;    |Entry_VGA:mainEntity|                         ; 5499 (5403)         ; 39 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity                                                                                                                        ; Entry_VGA     ; work         ;
-;       |VgaController:e_vgaController|             ; 54 (54)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|VgaController:e_vgaController                                                                                          ; VgaController ; work         ;
-;       |lpm_mult:Mult0|                            ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0                                                                                                         ; lpm_mult      ; work         ;
-;          |multcore:mult_core|                     ; 42 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore      ; work         ;
-;             |mpar_add:padder|                     ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add      ; work         ;
-;                |lpm_add_sub:adder[0]|             ; 10 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub   ; work         ;
-;                   |add_sub_j9h:auto_generated|    ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_j9h:auto_generated                      ; add_sub_j9h   ; work         ;
-;                |mpar_add:sub_par_add|             ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add      ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub   ; work         ;
-;                      |add_sub_hkh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_hkh:auto_generated ; add_sub_hkh   ; work         ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name   ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+---------------+--------------+
+; |Entry                                ; 876 (0)             ; 201 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |Entry                                                     ; Entry         ; work         ;
+;    |Entry_Pong:mainEntity|            ; 876 (798)           ; 201 (168)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_Pong:mainEntity                               ; Entry_Pong    ; work         ;
+;       |Disp4x7Seg:c_disp4x7seg|       ; 25 (25)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_Pong:mainEntity|Disp4x7Seg:c_disp4x7seg       ; Disp4x7Seg    ; work         ;
+;       |VgaController:c_vgaController| ; 53 (53)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Entry|Entry_Pong:mainEntity|VgaController:c_vgaController ; VgaController ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------+
-; Registers Removed During Synthesis                           ;
-+-----------------------------------------+--------------------+
-; Register name                           ; Reason for Removal ;
-+-----------------------------------------+--------------------+
-; Entry_VGA:mainEntity|clk_divider[1..25] ; Lost fanout        ;
-; Total Number of Removed Registers = 25  ;                    ;
-+-----------------------------------------+--------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                          ;
-+-------------------------------------+--------------------+---------------------------------------------------------------------------+
-; Register name                       ; Reason for Removal ; Registers Removed due to This Register                                    ;
-+-------------------------------------+--------------------+---------------------------------------------------------------------------+
-; Entry_VGA:mainEntity|clk_divider[1] ; Lost Fanouts       ; Entry_VGA:mainEntity|clk_divider[2], Entry_VGA:mainEntity|clk_divider[3], ;
-;                                     ;                    ; Entry_VGA:mainEntity|clk_divider[4], Entry_VGA:mainEntity|clk_divider[5]  ;
-+-------------------------------------+--------------------+---------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++-----------------------------------------------------------+------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                   ;
++-----------------------------------------------------------+------------------------------------------------------+
+; Entry_Pong:mainEntity|pixel_rgb[1]                        ; Merged with Entry_Pong:mainEntity|pixel_rgb[0]       ;
+; Entry_Pong:mainEntity|Disp4x7Seg:c_disp4x7seg|out_7seg[0] ; Stuck at GND due to stuck port data_in               ;
+; Entry_Pong:mainEntity|ball_position_y[0]                  ; Merged with Entry_Pong:mainEntity|ball_position_x[0] ;
+; Entry_Pong:mainEntity|clk_divider[18..25]                 ; Lost fanout                                          ;
+; Total Number of Removed Registers = 11                    ;                                                      ;
++-----------------------------------------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -288,96 +245,81 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 39    ;
+; Total registers                              ; 201   ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Clock Enable       ; 159   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |Entry|Entry_VGA:mainEntity|position[7] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++----------------------------------------------------+
+; Inverted Register Statistics                       ;
++------------------------------------------+---------+
+; Inverted Register                        ; Fan out ;
++------------------------------------------+---------+
+; Entry_Pong:mainEntity|pause              ; 137     ;
+; Entry_Pong:mainEntity|ball_position_y[7] ; 11      ;
+; Entry_Pong:mainEntity|ball_position_y[6] ; 11      ;
+; Entry_Pong:mainEntity|ball_position_y[5] ; 11      ;
+; Entry_Pong:mainEntity|ball_position_y[4] ; 11      ;
+; Entry_Pong:mainEntity|ball_position_x[8] ; 6       ;
+; Entry_Pong:mainEntity|ball_position_x[5] ; 6       ;
+; Entry_Pong:mainEntity|ball_position_x[4] ; 6       ;
+; Entry_Pong:mainEntity|ball_position_x[1] ; 4       ;
+; Entry_Pong:mainEntity|ball_position_x[2] ; 8       ;
+; Entry_Pong:mainEntity|ball_dir_up        ; 32      ;
+; Entry_Pong:mainEntity|ball_dir_right     ; 33      ;
+; Total number of inverted registers = 12  ;         ;
++------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Entry_VGA:mainEntity|VgaController:e_vgaController ;
-+-------------------+----------+------------------------------------------------------------------+
-; Parameter Name    ; Value    ; Type                                                             ;
-+-------------------+----------+------------------------------------------------------------------+
-; pixelfreq         ; 25000000 ; Signed Integer                                                   ;
-; hsync_visiblearea ; 640      ; Signed Integer                                                   ;
-; hsync_frontporch  ; 16       ; Signed Integer                                                   ;
-; hsync_syncpulse   ; 96       ; Signed Integer                                                   ;
-; hsync_backporch   ; 48       ; Signed Integer                                                   ;
-; vsync_visiblearea ; 480      ; Signed Integer                                                   ;
-; vsync_frontporch  ; 10       ; Signed Integer                                                   ;
-; vsync_syncpulse   ; 2        ; Signed Integer                                                   ;
-; vsync_backporch   ; 33       ; Signed Integer                                                   ;
-+-------------------+----------+------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|Disp4x7Seg:c_disp4x7seg|out_7seg[7] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Entry|Entry_Pong:mainEntity|p1_score[2]                         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Entry|Entry_Pong:mainEntity|p2_score[4]                         ;
+; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|ball_position_x[31]                 ;
+; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|ball_position_y[1]                  ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|p2_position_y[6]                    ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|p1_position_y[6]                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|ball_position_x[1]                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Entry|Entry_Pong:mainEntity|ball_position_y[5]                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Entry_Pong:mainEntity|VgaController:c_vgaController ;
++-------------------+----------+-------------------------------------------------------------------+
+; Parameter Name    ; Value    ; Type                                                              ;
++-------------------+----------+-------------------------------------------------------------------+
+; pixelfreq         ; 25000000 ; Signed Integer                                                    ;
+; hsync_visiblearea ; 640      ; Signed Integer                                                    ;
+; hsync_frontporch  ; 16       ; Signed Integer                                                    ;
+; hsync_syncpulse   ; 96       ; Signed Integer                                                    ;
+; hsync_backporch   ; 48       ; Signed Integer                                                    ;
+; vsync_visiblearea ; 480      ; Signed Integer                                                    ;
+; vsync_frontporch  ; 10       ; Signed Integer                                                    ;
+; vsync_syncpulse   ; 2        ; Signed Integer                                                    ;
+; vsync_backporch   ; 33       ; Signed Integer                                                    ;
++-------------------+----------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Entry_VGA:mainEntity|lpm_mult:Mult0 ;
-+------------------------------------------------+--------------+----------------------+
-; Parameter Name                                 ; Value        ; Type                 ;
-+------------------------------------------------+--------------+----------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY           ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY         ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE         ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE       ;
-; LPM_WIDTHA                                     ; 11           ; Untyped              ;
-; LPM_WIDTHB                                     ; 9            ; Untyped              ;
-; LPM_WIDTHP                                     ; 20           ; Untyped              ;
-; LPM_WIDTHR                                     ; 20           ; Untyped              ;
-; LPM_WIDTHS                                     ; 1            ; Untyped              ;
-; LPM_REPRESENTATION                             ; SIGNED       ; Untyped              ;
-; LPM_PIPELINE                                   ; 0            ; Untyped              ;
-; LATENCY                                        ; 0            ; Untyped              ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped              ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped              ;
-; USE_EAB                                        ; OFF          ; Untyped              ;
-; MAXIMIZE_SPEED                                 ; 6            ; Untyped              ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped              ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped              ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K  ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped              ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped              ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped              ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped              ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped              ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped              ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped              ;
-+------------------------------------------------+--------------+----------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                              ;
-+---------------------------------------+-------------------------------------+
-; Name                                  ; Value                               ;
-+---------------------------------------+-------------------------------------+
-; Number of entity instances            ; 1                                   ;
-; Entity Instance                       ; Entry_VGA:mainEntity|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 11                                  ;
-;     -- LPM_WIDTHB                     ; 9                                   ;
-;     -- LPM_WIDTHP                     ; 20                                  ;
-;     -- LPM_REPRESENTATION             ; SIGNED                              ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                  ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                 ;
-;     -- USE_EAB                        ; OFF                                 ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                  ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                  ;
-+---------------------------------------+-------------------------------------+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "Entry_Pong:mainEntity|Disp4x7Seg:c_disp4x7seg" ;
++---------------+-------+----------+----------------------------------------+
+; Port          ; Type  ; Severity ; Details                                ;
++---------------+-------+----------+----------------------------------------+
+; in_7seg[2..1] ; Input ; Info     ; Stuck at GND                           ;
+; in_7seg[3][0] ; Input ; Info     ; Stuck at GND                           ;
+; in_7seg[0][0] ; Input ; Info     ; Stuck at GND                           ;
++---------------+-------+----------+----------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -386,24 +328,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 27                          ;
-; cycloneiii_ff         ; 39                          ;
-;     ENA               ; 18                          ;
+; cycloneiii_ff         ; 201                         ;
+;     ENA               ; 149                         ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 5502                        ;
-;     arith             ; 113                         ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 87                          ;
-;     normal            ; 5389                        ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 100                         ;
-;         3 data inputs ; 310                         ;
-;         4 data inputs ; 4972                        ;
+;     plain             ; 32                          ;
+; cycloneiii_lcell_comb ; 890                         ;
+;     arith             ; 380                         ;
+;         2 data inputs ; 278                         ;
+;         3 data inputs ; 102                         ;
+;     normal            ; 510                         ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 65                          ;
+;         4 data inputs ; 374                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 11.84                       ;
+; Max LUT depth         ; 13.00                       ;
+; Average LUT depth     ; 6.93                        ;
 +-----------------------+-----------------------------+
 
 
@@ -412,7 +354,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:41     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -422,105 +364,74 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Dec 30 17:22:12 2022
+    Info: Processing started: Sun Jan 15 16:17:12 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Sandbox -c Sandbox
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src/Pong/Entry_Pong.vhd
+    Info (12022): Found design unit 1: Entry_Pong-behaviour File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 26
+    Info (12023): Found entity 1: Entry_Pong File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file src/Vga/Entry_VGA.vhd
-    Info (12022): Found design unit 1: Entry_VGA-behaviour File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 25
-    Info (12023): Found entity 1: Entry_VGA File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 6
+    Info (12022): Found design unit 1: Entry_VGA-behaviour File: /home/qik/Projects/FPGA/src/Vga/Entry_VGA.vhd Line: 25
+    Info (12023): Found entity 1: Entry_VGA File: /home/qik/Projects/FPGA/src/Vga/Entry_VGA.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/VendingMachine/Entry_VendingMachine.vhd
-    Info (12022): Found design unit 1: Entry_VendingMachine-behaviour File: /home/qik/vhdl/Sandbox/src/VendingMachine/Entry_VendingMachine.vhd Line: 23
-    Info (12023): Found entity 1: Entry_VendingMachine File: /home/qik/vhdl/Sandbox/src/VendingMachine/Entry_VendingMachine.vhd Line: 9
+    Info (12022): Found design unit 1: Entry_VendingMachine-behaviour File: /home/qik/Projects/FPGA/src/VendingMachine/Entry_VendingMachine.vhd Line: 23
+    Info (12023): Found entity 1: Entry_VendingMachine File: /home/qik/Projects/FPGA/src/VendingMachine/Entry_VendingMachine.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file src/Entry.vhd
-    Info (12022): Found design unit 1: Entry-behaviour File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 24
-    Info (12023): Found entity 1: Entry File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 6
+    Info (12022): Found design unit 1: Entry-behaviour File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 24
+    Info (12023): Found entity 1: Entry File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/EntryEntity/Sandbox.vhd
-    Info (12022): Found design unit 1: Sandbox-behaviour File: /home/qik/vhdl/Sandbox/src/EntryEntity/Sandbox.vhd Line: 20
-    Info (12023): Found entity 1: Sandbox File: /home/qik/vhdl/Sandbox/src/EntryEntity/Sandbox.vhd Line: 6
+    Info (12022): Found design unit 1: Sandbox-behaviour File: /home/qik/Projects/FPGA/src/EntryEntity/Sandbox.vhd Line: 20
+    Info (12023): Found entity 1: Sandbox File: /home/qik/Projects/FPGA/src/EntryEntity/Sandbox.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/Disp7Seg/Disp4x7Seg.vhd
-    Info (12022): Found design unit 1: Disp4x7Seg-behaviour File: /home/qik/vhdl/Sandbox/src/Disp7Seg/Disp4x7Seg.vhd Line: 19
-    Info (12023): Found entity 1: Disp4x7Seg File: /home/qik/vhdl/Sandbox/src/Disp7Seg/Disp4x7Seg.vhd Line: 8
+    Info (12022): Found design unit 1: Disp4x7Seg-behaviour File: /home/qik/Projects/FPGA/src/Disp7Seg/Disp4x7Seg.vhd Line: 19
+    Info (12023): Found entity 1: Disp4x7Seg File: /home/qik/Projects/FPGA/src/Disp7Seg/Disp4x7Seg.vhd Line: 8
 Info (12021): Found 2 design units, including 0 entities, in source file src/Disp7Seg/Disp4x7Seg_Types.vhd
-    Info (12022): Found design unit 1: Disp4x7Seg_Types File: /home/qik/vhdl/Sandbox/src/Disp7Seg/Disp4x7Seg_Types.vhd Line: 6
-    Info (12022): Found design unit 2: Disp4x7Seg_Types-body File: /home/qik/vhdl/Sandbox/src/Disp7Seg/Disp4x7Seg_Types.vhd Line: 49
+    Info (12022): Found design unit 1: Disp4x7Seg_Types File: /home/qik/Projects/FPGA/src/Disp7Seg/Disp4x7Seg_Types.vhd Line: 6
+    Info (12022): Found design unit 2: Disp4x7Seg_Types-body File: /home/qik/Projects/FPGA/src/Disp7Seg/Disp4x7Seg_Types.vhd Line: 49
 Info (12021): Found 1 design units, including 0 entities, in source file src/VendingMachine/VendingMachine_Types.vhd
-    Info (12022): Found design unit 1: VendingMachine_Types File: /home/qik/vhdl/Sandbox/src/VendingMachine/VendingMachine_Types.vhd Line: 6
+    Info (12022): Found design unit 1: VendingMachine_Types File: /home/qik/Projects/FPGA/src/VendingMachine/VendingMachine_Types.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/Utils/SingleClkKey.vhd
-    Info (12022): Found design unit 1: SingleClkKey-behaviour File: /home/qik/vhdl/Sandbox/src/Utils/SingleClkKey.vhd Line: 17
-    Info (12023): Found entity 1: SingleClkKey File: /home/qik/vhdl/Sandbox/src/Utils/SingleClkKey.vhd Line: 8
+    Info (12022): Found design unit 1: SingleClkKey-behaviour File: /home/qik/Projects/FPGA/src/Utils/SingleClkKey.vhd Line: 17
+    Info (12023): Found entity 1: SingleClkKey File: /home/qik/Projects/FPGA/src/Utils/SingleClkKey.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file src/VendingMachine/VendingMachine.vhd
-    Info (12022): Found design unit 1: VendingMachine-behaviour File: /home/qik/vhdl/Sandbox/src/VendingMachine/VendingMachine.vhd Line: 24
-    Info (12023): Found entity 1: VendingMachine File: /home/qik/vhdl/Sandbox/src/VendingMachine/VendingMachine.vhd Line: 9
+    Info (12022): Found design unit 1: VendingMachine-behaviour File: /home/qik/Projects/FPGA/src/VendingMachine/VendingMachine.vhd Line: 24
+    Info (12023): Found entity 1: VendingMachine File: /home/qik/Projects/FPGA/src/VendingMachine/VendingMachine.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file src/Vga/VgaController.vhd
-    Info (12022): Found design unit 1: VgaController-behaviour File: /home/qik/vhdl/Sandbox/src/Vga/VgaController.vhd Line: 33
-    Info (12023): Found entity 1: VgaController File: /home/qik/vhdl/Sandbox/src/Vga/VgaController.vhd Line: 5
+    Info (12022): Found design unit 1: VgaController-behaviour File: /home/qik/Projects/FPGA/src/Vga/VgaController.vhd Line: 33
+    Info (12023): Found entity 1: VgaController File: /home/qik/Projects/FPGA/src/Vga/VgaController.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file test.vhd
+    Info (12022): Found design unit 1: test-SYN File: /home/qik/Projects/FPGA/test.vhd Line: 53
+    Info (12023): Found entity 1: test File: /home/qik/Projects/FPGA/test.vhd Line: 43
 Info (12127): Elaborating entity "Entry" for the top level hierarchy
-Info (12128): Elaborating entity "Entry_VGA" for hierarchy "Entry_VGA:mainEntity" File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 51
-Warning (10540): VHDL Signal Declaration warning at Entry_VGA.vhd(13): used explicit default value for signal "out_buzzer" because signal was never assigned a value File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 13
-Warning (10540): VHDL Signal Declaration warning at Entry_VGA.vhd(14): used explicit default value for signal "out_leds" because signal was never assigned a value File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 14
-Warning (10540): VHDL Signal Declaration warning at Entry_VGA.vhd(16): used explicit default value for signal "out_7seg" because signal was never assigned a value File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 16
-Warning (10540): VHDL Signal Declaration warning at Entry_VGA.vhd(17): used explicit default value for signal "out_7segDigitSelect" because signal was never assigned a value File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 17
-Warning (10492): VHDL Process Statement warning at Entry_VGA.vhd(110): signal "isDisplaying" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 110
-Info (12128): Elaborating entity "VgaController" for hierarchy "Entry_VGA:mainEntity|VgaController:e_vgaController" File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 79
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Entry_VGA:mainEntity|Mult0" File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 125
-Info (12130): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 125
-Info (12133): Instantiated megafunction "Entry_VGA:mainEntity|lpm_mult:Mult0" with the following parameter: File: /home/qik/vhdl/Sandbox/src/Vga/Entry_VGA.vhd Line: 125
-    Info (12134): Parameter "LPM_WIDTHA" = "11"
-    Info (12134): Parameter "LPM_WIDTHB" = "9"
-    Info (12134): Parameter "LPM_WIDTHP" = "20"
-    Info (12134): Parameter "LPM_WIDTHR" = "20"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
-Info (12131): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
-Info (12131): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
-Info (12131): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_j9h.tdf
-    Info (12023): Found entity 1: add_sub_j9h File: /home/qik/vhdl/Sandbox/db/add_sub_j9h.tdf Line: 23
-Info (12131): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
-Info (12131): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_hkh.tdf
-    Info (12023): Found entity 1: add_sub_hkh File: /home/qik/vhdl/Sandbox/db/add_sub_hkh.tdf Line: 23
-Info (12131): Elaborated megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "Entry_VGA:mainEntity|lpm_mult:Mult0" File: /home/qik/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12128): Elaborating entity "Entry_Pong" for hierarchy "Entry_Pong:mainEntity" File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 51
+Warning (10540): VHDL Signal Declaration warning at Entry_Pong.vhd(14): used explicit default value for signal "out_buzzer" because signal was never assigned a value File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 14
+Warning (10540): VHDL Signal Declaration warning at Entry_Pong.vhd(15): used explicit default value for signal "out_leds" because signal was never assigned a value File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 15
+Warning (10492): VHDL Process Statement warning at Entry_Pong.vhd(156): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at Entry_Pong.vhd(165): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at Entry_Pong.vhd(244): signal "isDisplaying" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 244
+Warning (10492): VHDL Process Statement warning at Entry_Pong.vhd(244): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 244
+Info (12128): Elaborating entity "Disp4x7Seg" for hierarchy "Entry_Pong:mainEntity|Disp4x7Seg:c_disp4x7seg" File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 114
+Info (12128): Elaborating entity "VgaController" for hierarchy "Entry_Pong:mainEntity|VgaController:c_vgaController" File: /home/qik/Projects/FPGA/src/Pong/Entry_Pong.vhd Line: 125
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out_buzzer" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 12
-    Warning (13410): Pin "out_leds[0]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 13
-    Warning (13410): Pin "out_leds[1]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 13
-    Warning (13410): Pin "out_leds[2]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 13
-    Warning (13410): Pin "out_leds[3]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 13
-    Warning (13410): Pin "out_7seg[0]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[1]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[2]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[3]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[4]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[5]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[6]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7seg[7]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 15
-    Warning (13410): Pin "out_7segDigitSelect[0]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 16
-    Warning (13410): Pin "out_7segDigitSelect[1]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 16
-    Warning (13410): Pin "out_7segDigitSelect[2]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 16
-    Warning (13410): Pin "out_7segDigitSelect[3]" is stuck at VCC File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 16
+    Warning (13410): Pin "out_buzzer" is stuck at VCC File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 12
+    Warning (13410): Pin "out_leds[0]" is stuck at VCC File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 13
+    Warning (13410): Pin "out_leds[1]" is stuck at VCC File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 13
+    Warning (13410): Pin "out_leds[2]" is stuck at VCC File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 13
+    Warning (13410): Pin "out_leds[3]" is stuck at VCC File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 13
+    Warning (13410): Pin "out_7seg[0]" is stuck at VCC File: /home/qik/Projects/FPGA/src/Entry.vhd Line: 15
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 25 registers lost all their fanouts during netlist optimizations.
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "in_keys[0]" File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 10
-    Warning (15610): No output dependent on input pin "in_keys[1]" File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 10
-    Warning (15610): No output dependent on input pin "in_keys[2]" File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 10
-    Warning (15610): No output dependent on input pin "in_keys[3]" File: /home/qik/vhdl/Sandbox/src/Entry.vhd Line: 10
-Info (21057): Implemented 5526 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 903 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 5499 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 552 megabytes
-    Info: Processing ended: Fri Dec 30 17:22:59 2022
-    Info: Elapsed time: 00:00:47
-    Info: Total CPU time (on all processors): 00:00:56
+    Info (21061): Implemented 876 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Sun Jan 15 16:17:30 2023
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:40
 
 
